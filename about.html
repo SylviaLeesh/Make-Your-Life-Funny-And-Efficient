@@ -1,43 +1,62 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!doctype html><html lang='en'><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NEBULA — About — BUILD_20250810_071027</title>
+  <title>NEBULA — BUILD BUILD_20250810_094702</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#050714;--text:#f1f6ff;--muted:#8aa0d6;--c1:#7aa2ff;--c2:#22d3ee;--c3:#a78bfa;--hot:#ff5ecd;--glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.18)}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(1400px 600px at 100% 0%, #7aa2ff26, transparent 60%),radial-gradient(1200px 700px at 0% 100%, #a78bfa2a, transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,Roboto,sans-serif;overflow-x:hidden}
+    :root{--bg:#050714;--panel:#0b0f25;--text:#f1f6ff;--muted:#8aa0d6;
+      --c1:#7aa2ff;--c2:#22d3ee;--c3:#a78bfa;--hot:#ff5ecd;--gold:#ffd166;
+      --glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.18);
+      --radius:18px;--shadow:0 18px 48px rgba(0,0,0,.45)}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(1400px 600px at 100% 0%, #7aa2ff26, transparent 60%),radial-gradient(1200px 700px at 0% 100%, #a78bfa2a, transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+    .aurora{position:fixed;inset:-20% -10% -10% -10%;z-index:-4;filter:blur(40px) saturate(140%);opacity:.9;pointer-events:none}
+    .a{position:absolute;border-radius:50%;mix-blend:screen;animation:flow 18s ease-in-out infinite}
+    .a.one{width:75vw;height:75vw;background:radial-gradient(closest-side at 40% 40%, var(--c1), transparent 60%), radial-gradient(closest-side at 60% 60%, var(--c3), transparent 60%);left:-10vw;top:-5vw}
+    .a.two{width:60vw;height:60vw;background:radial-gradient(closest-side at 50% 50%, var(--c2), transparent 60%), radial-gradient(closest-side at 30% 70%, var(--c1), transparent 60%);right:-8vw;top:8vh;animation-duration:22s}
+    .a.three{width:70vw;height:70vw;background:radial-gradient(closest-side at 50% 50%, var(--hot), transparent 60%), radial-gradient(closest-side at 70% 30%, var(--c1), transparent 60%);left:10vw;bottom:-20vh;animation-duration:26s}
+    @keyframes flow{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(2vw,-2vh,0) rotate(10deg)}
     header{position:sticky;top:0;z-index:50;border-bottom:1px solid #ffffff18}
     .nav{max-width:1200px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
-    .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 210deg,var(--c1),var(--c2),var(--c3),var(--hot),var(--c1))}
-    a{color:inherit;text-decoration:none} nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(180deg,var(--hot),#ff7ad9);color:#fff;font-weight:800;border:1px solid #fff2;box-shadow:0 10px 24px #0008}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 210deg,var(--c1),var(--c2),var(--c3),var(--hot),var(--c1));box-shadow:inset 0 0 0 1px #fff2,0 10px 24px #0008}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    a{color:inherit;text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(180deg,var(--hot),#ff7ad9);color:#fff;font-weight:800;letter-spacing:.2px;border:1px solid #fff2;box-shadow:0 10px 24px #0008;transition:transform .08s ease, filter .2s ease}
+    .btn:hover{transform:translateY(-1px) scale(1.01)}
     .ghost{background:var(--glass);backdrop-filter:saturate(180%) blur(14px);border:1px solid var(--border);color:var(--text)}
     main{max-width:1200px;margin:0 auto;padding:32px 20px}
-    .glass{background:var(--glass);backdrop-filter:blur(14px) saturate(160%);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px #0008;padding:20px}
+    .glass{background:var(--glass);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px #0008;padding:20px}
+    .grad{background:linear-gradient(90deg,var(--c1),var(--c2),var(--hot));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted)} .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,#93b4ff33,#22d3ee22);border:1px solid #ffffff2c}
   </style>
-</head>
-<body>
-  <header class="glass">
-    <div class="nav">
-      <a href="index.html" class="logo" style="display:inline-block"></a>
-      <nav>
-        <ul>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="submit.html">Submit</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-      <div style="display:flex;gap:10px">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn" href="submit.html">Contribute</a>
-      </div>
+</head><body>
+<div class="aurora"><div class="a one"></div><div class="a two"></div><div class="a three"></div></div>
+
+<header class="glass">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="logo"></span><span>NEBULA</span></a>
+    <nav><ul>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="submit.html">Submit</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul></nav>
+    <div style="display:flex;gap:10px">
+      <a class="btn ghost" href="login.html">Login</a>
+      <a class="btn" href="submit.html">Contribute</a>
     </div>
-  </header>
-  <main>
-    <div class='glass'><h1>About</h1><p>Community to collect useful & delightful sites.</p></div>
-  </main>
-</body>
-</html>
+  </div>
+</header>
+
+<main>
+  <section class="glass">
+    <h1>About</h1>
+    <p class="lead">A community to collect useful & delightful sites. We curate, you contribute — and we craft promo videos.</p>
+    <div class="timeline" style="display:grid;gap:12px;margin-top:10px">
+      <div class="tl" style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start"><div class="dot" style="width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#7aa2ff,#ff5ecd);box-shadow:0 0 0 4px rgba(138,176,255,.15)"></div><div><strong>2025 · Preview</strong><p class="lead">Launch the ultra‑glass multi‑page skeleton with demo content.</p></div></div>
+      <div class="tl" style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start"><div class="dot" style="width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#7aa2ff,#ff5ecd);box-shadow:0 0 0 4px rgba(138,176,255,.15)"></div><div><strong>2025 · Community</strong><p class="lead">Login, submit, comments, and ranking.</p></div></div>
+      <div class="tl" style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start"><div class="dot" style="width:10px;height:10px;border-radius:50%;background:linear-gradient(180deg,#7aa2ff,#ff5ecd);box-shadow:0 0 0 4px rgba(138,176,255,.15)"></div><div><strong>2026 · Monetize</strong><p class="lead">Promo video service with prioritized showcase slots.</p></div></div>
+    </div>
+  </section>
+</main>
+</body></html>

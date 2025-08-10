@@ -1,43 +1,103 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!doctype html><html lang='en'><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NEBULA — Submit — BUILD_20250810_071027</title>
+  <title>NEBULA — BUILD BUILD_20250810_094702</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#050714;--text:#f1f6ff;--muted:#8aa0d6;--c1:#7aa2ff;--c2:#22d3ee;--c3:#a78bfa;--hot:#ff5ecd;--glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.18)}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(1400px 600px at 100% 0%, #7aa2ff26, transparent 60%),radial-gradient(1200px 700px at 0% 100%, #a78bfa2a, transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,Roboto,sans-serif;overflow-x:hidden}
+    :root{--bg:#050714;--panel:#0b0f25;--text:#f1f6ff;--muted:#8aa0d6;
+      --c1:#7aa2ff;--c2:#22d3ee;--c3:#a78bfa;--hot:#ff5ecd;--gold:#ffd166;
+      --glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.18);
+      --radius:18px;--shadow:0 18px 48px rgba(0,0,0,.45)}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(1400px 600px at 100% 0%, #7aa2ff26, transparent 60%),radial-gradient(1200px 700px at 0% 100%, #a78bfa2a, transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+    .aurora{position:fixed;inset:-20% -10% -10% -10%;z-index:-4;filter:blur(40px) saturate(140%);opacity:.9;pointer-events:none}
+    .a{position:absolute;border-radius:50%;mix-blend:screen;animation:flow 18s ease-in-out infinite}
+    .a.one{width:75vw;height:75vw;background:radial-gradient(closest-side at 40% 40%, var(--c1), transparent 60%), radial-gradient(closest-side at 60% 60%, var(--c3), transparent 60%);left:-10vw;top:-5vw}
+    .a.two{width:60vw;height:60vw;background:radial-gradient(closest-side at 50% 50%, var(--c2), transparent 60%), radial-gradient(closest-side at 30% 70%, var(--c1), transparent 60%);right:-8vw;top:8vh;animation-duration:22s}
+    .a.three{width:70vw;height:70vw;background:radial-gradient(closest-side at 50% 50%, var(--hot), transparent 60%), radial-gradient(closest-side at 70% 30%, var(--c1), transparent 60%);left:10vw;bottom:-20vh;animation-duration:26s}
+    @keyframes flow{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(2vw,-2vh,0) rotate(10deg)}
     header{position:sticky;top:0;z-index:50;border-bottom:1px solid #ffffff18}
     .nav{max-width:1200px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
-    .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 210deg,var(--c1),var(--c2),var(--c3),var(--hot),var(--c1))}
-    a{color:inherit;text-decoration:none} nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(180deg,var(--hot),#ff7ad9);color:#fff;font-weight:800;border:1px solid #fff2;box-shadow:0 10px 24px #0008}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 210deg,var(--c1),var(--c2),var(--c3),var(--hot),var(--c1));box-shadow:inset 0 0 0 1px #fff2,0 10px 24px #0008}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    a{color:inherit;text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(180deg,var(--hot),#ff7ad9);color:#fff;font-weight:800;letter-spacing:.2px;border:1px solid #fff2;box-shadow:0 10px 24px #0008;transition:transform .08s ease, filter .2s ease}
+    .btn:hover{transform:translateY(-1px) scale(1.01)}
     .ghost{background:var(--glass);backdrop-filter:saturate(180%) blur(14px);border:1px solid var(--border);color:var(--text)}
     main{max-width:1200px;margin:0 auto;padding:32px 20px}
-    .glass{background:var(--glass);backdrop-filter:blur(14px) saturate(160%);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px #0008;padding:20px}
+    .glass{background:var(--glass);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px #0008;padding:20px}
+    .grad{background:linear-gradient(90deg,var(--c1),var(--c2),var(--hot));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted)} .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,#93b4ff33,#22d3ee22);border:1px solid #ffffff2c}
   </style>
-</head>
-<body>
-  <header class="glass">
-    <div class="nav">
-      <a href="index.html" class="logo" style="display:inline-block"></a>
-      <nav>
-        <ul>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="submit.html">Submit</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-      <div style="display:flex;gap:10px">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn" href="submit.html">Contribute</a>
-      </div>
+</head><body>
+<div class="aurora"><div class="a one"></div><div class="a two"></div><div class="a three"></div></div>
+
+<header class="glass">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="logo"></span><span>NEBULA</span></a>
+    <nav><ul>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="submit.html">Submit</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul></nav>
+    <div style="display:flex;gap:10px">
+      <a class="btn ghost" href="login.html">Login</a>
+      <a class="btn" href="submit.html">Contribute</a>
     </div>
-  </header>
-  <main>
-    <div class='glass'><h1>Submit</h1><p>Placeholder forms (wire backend later).</p></div>
-  </main>
-</body>
-</html>
+  </div>
+</header>
+
+<main>
+  <section class="glass">
+    <h1>Submit</h1>
+    <p class="lead">在接通后端之前，提交会保存在你的浏览器里（localStorage）。</p>
+    <div class="tabs" style="display:flex;gap:8px;margin-bottom:14px">
+      <button class="btn" id="tabSite">Submit Website</button>
+      <button class="btn ghost" id="tabReq">Request Website</button>
+    </div>
+    <div id="sitePanel" class="panel" style="display:block">
+      <form id="siteForm" style="display:grid;gap:14px">
+        <input name="title" placeholder="Site title">
+        <input name="url" placeholder="URL (https://...)">
+        <textarea name="desc" rows="3" placeholder="Short description"></textarea>
+        <input name="tags" placeholder="Tags (comma separated)">
+        <button class="btn" type="submit">Save Draft</button>
+      </form>
+      <small class="lead" id="siteMsg"></small>
+    </div>
+    <div id="reqPanel" class="panel" style="display:none">
+      <form id="reqForm" style="display:grid;gap:14px">
+        <div class="two" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <input name="name" placeholder="Your name">
+          <input name="email" placeholder="Email">
+        </div>
+        <textarea name="need" rows="4" placeholder="Describe the site you want (e.g., 'A site that ...')"></textarea>
+        <button class="btn" type="submit">Save Draft</button>
+      </form>
+      <small class="lead" id="reqMsg"></small>
+    </div>
+  </section>
+</main>
+<canvas class="confetti" id="confetti" style="position:fixed;inset:0;pointer-events:none;z-index:1300"></canvas>
+<script>
+  const tabSite=document.getElementById('tabSite'); const tabReq=document.getElementById('tabReq');
+  const sitePanel=document.getElementById('sitePanel'); const reqPanel=document.getElementById('reqPanel');
+  tabSite.onclick=()=>{ sitePanel.style.display='block'; reqPanel.style.display='none'; tabSite.classList.remove('ghost'); tabReq.classList.add('ghost'); };
+  tabReq.onclick=()=>{ reqPanel.style.display='block'; sitePanel.style.display='none'; tabReq.classList.remove('ghost'); tabSite.classList.add('ghost'); };
+  function saveDraft(key, data){ const all=JSON.parse(localStorage.getItem(key)||'[]'); all.push(Object.assign({ts:Date.now()}, data)); localStorage.setItem(key, JSON.stringify(all)); }
+  document.getElementById('siteForm').addEventListener('submit', e=>{ e.preventDefault(); const f=e.currentTarget;
+    saveDraft('sites', {title:f.title.value,url:f.url.value,desc:f.desc.value,tags:f.tags.value});
+    document.getElementById('siteMsg').textContent='Saved locally ✓'; f.reset(); celebrate();
+  });
+  document.getElementById('reqForm').addEventListener('submit', e=>{ e.preventDefault(); const f=e.currentTarget;
+    saveDraft('requests', {name:f.name.value,email:f.email.value,need:f.need.value});
+    document.getElementById('reqMsg').textContent='Saved locally ✓'; f.reset(); celebrate();
+  });
+  const cv=document.getElementById('confetti'); const cx=cv.getContext('2d'); const DPR=Math.max(1, devicePixelRatio||1); function rs(){ cv.width=innerWidth*DPR; cv.height=innerHeight*DPR; } rs(); addEventListener('resize', rs);
+  function celebrate(){ const parts=Array.from({length:150},()=>({x:Math.random()*cv.width,y:-20*Math.random(),vx:(Math.random()-.5)*3*DPR,vy:Math.random()*2*DPR,life:60+Math.random()*40,h:Math.random()*360}));
+    function tick(){ cx.clearRect(0,0,cv.width,cv.height); parts.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; p.vy+=0.05*DPR; p.life--; cx.fillStyle=`hsla(${p.h},95%,60%,.9)`; cx.fillRect(p.x,p.y,3*DPR,6*DPR); }); if(parts.some(p=>p.life>0)) requestAnimationFrame(tick); else cx.clearRect(0,0,cv.width,cv.height); }
+    tick();
+  }
+</script>
+</body></html>

@@ -1,43 +1,67 @@
-<!doctype html>
-<html lang="en">
-<head>
+<!doctype html><html lang='en'><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NEBULA — Home — BUILD_20250810_071027</title>
+  <title>NEBULA — BUILD BUILD_20250810_094702</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#050714;--text:#f1f6ff;--muted:#8aa0d6;--c1:#7aa2ff;--c2:#22d3ee;--c3:#a78bfa;--hot:#ff5ecd;--glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.18)}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(1400px 600px at 100% 0%, #7aa2ff26, transparent 60%),radial-gradient(1200px 700px at 0% 100%, #a78bfa2a, transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,Roboto,sans-serif;overflow-x:hidden}
+    :root{--bg:#050714;--panel:#0b0f25;--text:#f1f6ff;--muted:#8aa0d6;
+      --c1:#7aa2ff;--c2:#22d3ee;--c3:#a78bfa;--hot:#ff5ecd;--gold:#ffd166;
+      --glass:rgba(255,255,255,.08);--border:rgba(255,255,255,.18);
+      --radius:18px;--shadow:0 18px 48px rgba(0,0,0,.45)}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(1400px 600px at 100% 0%, #7aa2ff26, transparent 60%),radial-gradient(1200px 700px at 0% 100%, #a78bfa2a, transparent 60%),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+    .aurora{position:fixed;inset:-20% -10% -10% -10%;z-index:-4;filter:blur(40px) saturate(140%);opacity:.9;pointer-events:none}
+    .a{position:absolute;border-radius:50%;mix-blend:screen;animation:flow 18s ease-in-out infinite}
+    .a.one{width:75vw;height:75vw;background:radial-gradient(closest-side at 40% 40%, var(--c1), transparent 60%), radial-gradient(closest-side at 60% 60%, var(--c3), transparent 60%);left:-10vw;top:-5vw}
+    .a.two{width:60vw;height:60vw;background:radial-gradient(closest-side at 50% 50%, var(--c2), transparent 60%), radial-gradient(closest-side at 30% 70%, var(--c1), transparent 60%);right:-8vw;top:8vh;animation-duration:22s}
+    .a.three{width:70vw;height:70vw;background:radial-gradient(closest-side at 50% 50%, var(--hot), transparent 60%), radial-gradient(closest-side at 70% 30%, var(--c1), transparent 60%);left:10vw;bottom:-20vh;animation-duration:26s}
+    @keyframes flow{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(2vw,-2vh,0) rotate(10deg)}
     header{position:sticky;top:0;z-index:50;border-bottom:1px solid #ffffff18}
     .nav{max-width:1200px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 20px}
-    .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 210deg,var(--c1),var(--c2),var(--c3),var(--hot),var(--c1))}
-    a{color:inherit;text-decoration:none} nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(180deg,var(--hot),#ff7ad9);color:#fff;font-weight:800;border:1px solid #fff2;box-shadow:0 10px 24px #0008}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .logo{width:32px;height:32px;border-radius:10px;background:conic-gradient(from 210deg,var(--c1),var(--c2),var(--c3),var(--hot),var(--c1));box-shadow:inset 0 0 0 1px #fff2,0 10px 24px #0008}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    a{color:inherit;text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;background:linear-gradient(180deg,var(--hot),#ff7ad9);color:#fff;font-weight:800;letter-spacing:.2px;border:1px solid #fff2;box-shadow:0 10px 24px #0008;transition:transform .08s ease, filter .2s ease}
+    .btn:hover{transform:translateY(-1px) scale(1.01)}
     .ghost{background:var(--glass);backdrop-filter:saturate(180%) blur(14px);border:1px solid var(--border);color:var(--text)}
     main{max-width:1200px;margin:0 auto;padding:32px 20px}
-    .glass{background:var(--glass);backdrop-filter:blur(14px) saturate(160%);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px #0008;padding:20px}
+    .glass{background:var(--glass);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 30px #0008;padding:20px}
+    .grad{background:linear-gradient(90deg,var(--c1),var(--c2),var(--hot));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted)} .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,#93b4ff33,#22d3ee22);border:1px solid #ffffff2c}
   </style>
-</head>
-<body>
-  <header class="glass">
-    <div class="nav">
-      <a href="index.html" class="logo" style="display:inline-block"></a>
-      <nav>
-        <ul>
-          <li><a href="explore.html">Explore</a></li>
-          <li><a href="videos.html">Videos</a></li>
-          <li><a href="submit.html">Submit</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </nav>
-      <div style="display:flex;gap:10px">
-        <a class="btn ghost" href="login.html">Login</a>
-        <a class="btn" href="submit.html">Contribute</a>
+</head><body>
+<div class="aurora"><div class="a one"></div><div class="a two"></div><div class="a three"></div></div>
+
+<header class="glass">
+  <div class="nav">
+    <a class="brand" href="index.html"><span class="logo"></span><span>NEBULA</span></a>
+    <nav><ul>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="submit.html">Submit</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul></nav>
+    <div style="display:flex;gap:10px">
+      <a class="btn ghost" href="login.html">Login</a>
+      <a class="btn" href="submit.html">Contribute</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="glass" style="display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center">
+    <div>
+      <p class="tag">BUILD BUILD_20250810_094702</p>
+      <h1>Discover & curate <span class="grad">useful + delightful</span> websites</h1>
+      <p class="lead">Ultra‑glass visuals meet a community for sharing links, requests, and showreels.</p>
+      <div style="display:flex;gap:12px;margin-top:16px">
+        <a class="btn" href="explore.html">Explore Now</a>
+        <a class="btn ghost" href="videos.html">Watch Trailers</a>
       </div>
     </div>
-  </header>
-  <main>
-    <div class='glass'><h1>Home</h1><p>Welcome — preview build BUILD_20250810_071027</p><p>Go to <a href='explore.html'>Explore</a> or <a href='videos.html'>Videos</a>.</p></div>
-  </main>
-</body>
-</html>
+    <div class="glass" style="overflow:hidden">
+      <img alt="hero" style="display:block;width:100%;aspect-ratio:16/10;object-fit:cover" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='1200' height='750'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%237aa2ff'/><stop offset='1' stop-color='%23ff5ecd'/></linearGradient></defs><rect width='1200' height='750' fill='%23050714'/><g fill='url(%23g)' opacity='.95'><rect x='60' y='60' rx='20' ry='20' width='1080' height='120'/><rect x='60' y='220' rx='20' ry='20' width='520' height='180'/><rect x='620' y='220' rx='20' ry='20' width='520' height='180'/><rect x='60' y='420' rx='20' ry='20' width='1080' height='260'/></g></svg>">
+    </div>
+  </section>
+</main>
+</body></html>
